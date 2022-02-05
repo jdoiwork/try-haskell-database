@@ -27,7 +27,6 @@ dependencies:
 - text
 - mtl
 - containers
-- resourcet
 - monad-logger
 
 library:
