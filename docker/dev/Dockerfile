@@ -1,4 +1,6 @@
 FROM haskell:latest
 
 RUN apt update \
-    && apt install -y libpq-dev
+    && apt install -y \
+        libpq-dev \
+        sqlite3
