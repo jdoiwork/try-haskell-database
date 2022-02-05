@@ -24,6 +24,8 @@ dependencies:
 - persistent
 - persistent-sqlite
 - text
+- mtl
+- containers
 
 library:
   source-dirs: src

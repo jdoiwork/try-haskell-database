@@ -1,8 +1,9 @@
 module Main where
 
-import Lib
+import qualified Lib
+import qualified Lib2
 
 main :: IO ()
 main = do
-    someFunc
-    readSql
+    Lib.readSql
+    Lib2.readSql

@@ -1,16 +1,13 @@
 {-# LANGUAGE OverloadedStrings  #-}
 
 module Lib
-    ( someFunc
-    , readSql
+    ( readSql
     ) where
 
 import Database.Sqlite
 import Data.Text
 import Database.Persist (PersistValue)
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
 
 readSql :: IO ()
 readSql = do
