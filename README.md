@@ -4,6 +4,9 @@
 
 
 # 動かし方
+
+vscode の `Cmd + Shift + P` して `Reopen in Container` する。
+
 ## データベースの準備
 
 ### SQLite
@@ -46,7 +49,6 @@ sqlite3
 | データベース | |
 
 ## ビルドと実行
-vscode の `Cmd + Shift + P` して `Reopen in Container` する。
 
 ```bash
 # 初回のみ
