@@ -23,9 +23,12 @@ dependencies:
 - base >= 4.7 && < 5
 - persistent
 - persistent-sqlite
+- persistent-postgresql
 - text
 - mtl
 - containers
+- resourcet
+- monad-logger
 
 library:
   source-dirs: src

@@ -27,6 +27,7 @@ library
   exposed-modules:
       Lib
       Lib2
+      Lib3
   other-modules:
       Paths_try_haskell_database
   hs-source-dirs:
@@ -34,9 +35,12 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , monad-logger
     , mtl
     , persistent
+    , persistent-postgresql
     , persistent-sqlite
+    , resourcet
     , text
   default-language: Haskell2010
 
@@ -50,9 +54,12 @@ executable try-haskell-database-exe
   build-depends:
       base >=4.7 && <5
     , containers
+    , monad-logger
     , mtl
     , persistent
+    , persistent-postgresql
     , persistent-sqlite
+    , resourcet
     , text
     , try-haskell-database
   default-language: Haskell2010
@@ -68,9 +75,12 @@ test-suite try-haskell-database-test
   build-depends:
       base >=4.7 && <5
     , containers
+    , monad-logger
     , mtl
     , persistent
+    , persistent-postgresql
     , persistent-sqlite
+    , resourcet
     , text
     , try-haskell-database
   default-language: Haskell2010
