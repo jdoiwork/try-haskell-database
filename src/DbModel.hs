@@ -17,24 +17,26 @@
 module DbModel where
 
 import Database.Persist.TH
+    ( mkPersist, persistLowerCase, share, sqlSettings )
 import Database.Persist.Sql
-import Control.Monad.Logger (runStderrLoggingT, logInfo)
-import Data.Text
+    ( PersistValue(PersistText),
+      selectList,
+      rawSql,
+      Entity,
+      BackendKey(SqlBackendKey),
+      SqlPersistT )
+import Data.Text ( Text )
 import Control.Monad.IO.Class (MonadIO, liftIO)
 
 
--- , mkMigrate "migrateAll"
--- mkPersist sqlSettings
-
-share [mkPersist sqlSettings ] [persistLowerCase|
+-- share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
+share [mkPersist sqlSettings] [persistLowerCase|
 User sql=users
     name  Text
     email Text
 
     deriving Show
 |] 
-
-
 
 
 
