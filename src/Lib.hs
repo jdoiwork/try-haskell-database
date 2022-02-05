@@ -5,28 +5,35 @@ module Lib
     ) where
 
 import Database.Sqlite
-import Data.Text
+import Data.Text (Text)
 import Database.Persist (PersistValue)
 
 
 readSql :: IO ()
 readSql = do
     conn <- open "./hoge.db"
-    smt <- prepare conn "select * from users"
-    rows <- readRows conn smt
+
+    stmt <- prepare  conn "select * from users"
+    rows <- readRows conn stmt
     print rows
-    finalize smt
+
+    finalize stmt
     close conn
+
     return ()
 
+
 readRows :: Connection -> Statement -> IO [[PersistValue]]
-readRows conn smt = do
-    res <- stepConn conn smt
-    case res of
-        Row -> do
-            putStrLn "read row"
-            row <- columns smt
-            (row :) <$> readRows conn smt
-        Done -> do
-            putStrLn "read done"
-            return []
+readRows conn stmt = loop []
+    where
+        loop xs = do
+            res <- stepConn conn stmt
+            case res of
+                Done -> do
+                    putStrLn "read done"
+                    return $ reverse xs
+                Row -> do
+                    putStrLn "read row"
+                    row <- columns stmt
+                    loop (row : xs)
+
