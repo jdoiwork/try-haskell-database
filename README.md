@@ -1,5 +1,8 @@
 # try-haskell-database
 
+- Haskell の データベース接続のサンプル
+
+## 動かし方
 vscode の `Cmd + Shift + P` して `Reopen in Container` する。
 
 ```bash
