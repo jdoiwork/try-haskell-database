@@ -25,9 +25,7 @@ dependencies:
 - persistent-sqlite
 - persistent-postgresql
 - text
-- mtl
-- containers
-- monad-logger
+
 
 library:
   source-dirs: src
